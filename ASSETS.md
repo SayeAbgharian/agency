@@ -13,7 +13,7 @@ Changes: background removed, converted to greyscale, bottom faded. The credit is
 
 ## Temporary photos (Unsplash)
 
-Hotlinked from the Unsplash CDN; URLs are in `src/data/content.ts`. They are placeholders, labelled «تصویر موقت» on the page, and should be replaced with the agency's own work.
+Downloaded from Unsplash and stored in `public/images/photos/` as `<photo-id>-<width>x<height>.webp` (the Unsplash CDN is blocked on some networks, so it is not hotlinked). Sizes are set in `src/data/content.ts`. They are placeholders, labelled «تصویر موقت» on the page, and should be replaced with the agency's own work.
 
 - About: photo-1516035069371-29a1b244cc32
 - Portfolio: photo-1519608487953-e999c86e7455, photo-1460925895917-afdab827c52f, photo-1634017839464-5c339ebe3cb4, photo-1495474472287-4d71bcdd2085, photo-1485846234645-a62644f84728, photo-1519501025264-65ba15a82390

@@ -2,12 +2,9 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 // This project is a static frontend. No proxy, API, or server routes are configured.
-export default defineConfig({ plugins: [react()], base: "./" });
-
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-
-export default defineConfig({
+// GitHub Pages serves the site from /agency/, so production builds use that base;
+// the dev server keeps "/" so localhost works as before.
+export default defineConfig(({ command, isPreview }) => ({
   plugins: [react()],
-  base: "/agency/",
-});
+  base: command === "build" || isPreview ? "/agency/" : "/",
+}));

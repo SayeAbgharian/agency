@@ -61,8 +61,13 @@ export interface Social {
   icon: "instagram" | "telegram" | "linkedin" | "youtube";
 }
 
+const base = import.meta.env.BASE_URL;
+
+/** Unsplash photos are stored locally in public/images/photos (the Unsplash CDN is blocked on some networks).
+ * Each file is the photo cropped to `${width}x${height}`; a new size needs a new file.
+ */
 const unsplash = (id: string, width: number, height: number) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&h=${height}&q=78`;
+  `${base}images/photos/${id}-${width}x${height}.webp`;
 const unsplashMedia = (
   id: string,
   alt: string,
@@ -77,8 +82,6 @@ const unsplashMedia = (
   height,
   position,
 });
-
-const base = import.meta.env.BASE_URL;
 
 export const images = {
   /** Head of Apollo, British Museum. Photo: Marie-Lan Nguyen, CC BY 2.5 (credited in the footer). */
