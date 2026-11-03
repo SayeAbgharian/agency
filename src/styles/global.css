@@ -1,0 +1,2683 @@
+/* ==========================================================================
+   Design tokens
+   Dark is the brand default (the owner's design is a lit statue at night).
+   Light is a full second theme.
+   Palette (owner's swatches): #0B1426 night, #162440 deep navy, #304173 navy,
+   #47458C indigo, #DBD5F2 lavender. Accents that sit on a dark surface use
+   lighter steps of the same hues so text and lines stay legible.
+   ========================================================================== */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0b1426;
+  --bg-soft: #101c33;
+  --card: #121f39;
+  --card-2: #162440;
+  --glass: rgba(11, 20, 38, 0.6);
+  --line: rgba(219, 213, 242, 0.12);
+  --line-strong: rgba(219, 213, 242, 0.28);
+  --line-input: rgba(219, 213, 242, 0.55);
+  --text: #f1eefb;
+  --text-2: #b9b5d6;
+  /* One step lighter than before the sky got its colour: holds 4.5:1 where the lights overlap. */
+  --text-3: #aaa7cc;
+  /* Brand spectrum: navy, indigo, lavender (one family, three temperatures). */
+  --indigo: #7185c8;
+  --violet: #8f8ce0;
+  --orchid: #dbd5f2;
+  --brand-grad: linear-gradient(110deg, #7185c8 0%, #8f8ce0 50%, #dbd5f2 100%);
+  --dust-white: #f3f1fc;
+  --accent: #a5a2ea;
+  --accent-strong: #c6c2f2;
+  --accent-soft: rgba(143, 140, 224, 0.14);
+  --focus: #dbd5f2;
+  --glow: rgba(110, 106, 210, 0.5);
+  --btn-bg: linear-gradient(110deg, #e8e4f9 0%, #c4c0f0 35%, #a9b6e8 70%, #e8e4f9 100%);
+  --btn-text: #0b1426;
+  --phrase-grad: linear-gradient(100deg, #dbd5f2 0%, #aeabef 45%, #8fa4e2 100%);
+  --ring-a: #5f74bb;
+  --ring-b: #ece9fa;
+  --ring-c: #8f8ce0;
+  --comet: #f6f4fd;
+  --icon-a: #dbd5f2;
+  --icon-b: #6f6cc4;
+  --hero-light: rgba(71, 69, 140, 0.34);
+  --hero-top: rgba(48, 65, 115, 0.32);
+  --statue-filter: brightness(0.82) contrast(1.08);
+  --statue-tint: 0.62;
+  --sweep: rgba(255, 255, 255, 0.6);
+  --duo-a: #304173;
+  --duo-b: #a5a2ea;
+  /* Page sky: navy at the top deepening toward indigo at the foot, so the scroll has a direction. */
+  --amb-field: linear-gradient(180deg, #0b1426 0%, #0d1632 48%, #13153a 100%);
+  --amb-indigo: rgba(56, 78, 156, 0.42);
+  --amb-violet: rgba(84, 78, 180, 0.34);
+  --amb-orchid: rgba(219, 213, 242, 0.1);
+  --aurora: linear-gradient(100deg, transparent 6%, rgba(95, 116, 187, 0.2) 28%, rgba(143, 140, 224, 0.24) 50%, rgba(219, 213, 242, 0.12) 68%, transparent 90%);
+  --star-opacity: 0.85;
+  --cursor-light: rgba(219, 213, 242, 0.07);
+  --cta-field: linear-gradient(100deg, #0b1426 0%, #162440 28%, #304173 54%, #47458c 78%, #162440 100%);
+  --cta-glow: radial-gradient(ellipse 45% 120% at 88% 50%, rgba(219, 213, 242, 0.16), transparent 70%);
+  --cloud-opacity: 0.4;
+  --cloud-filter: brightness(0.62) sepia(0.35) hue-rotate(200deg) saturate(1.4);
+  --sphere: radial-gradient(circle at 34% 28%, #a5a2ea 0%, #47458c 22%, #162440 56%, #070d1a 82%);
+  --sphere-shadow: inset -18px -24px 40px rgba(0, 0, 0, 0.65), inset 8px 10px 24px rgba(219, 213, 242, 0.2), 0 0 70px rgba(71, 69, 140, 0.45);
+  --danger: #ff8fa8;
+  --danger-text: #ffb8c7;
+  /* Neon line around the header frame: a light-blue trail with a white head. */
+  --neon: #93c5fd;
+  --neon-core: #ffffff;
+  --neon-glow: rgba(147, 197, 253, 0.75);
+  --shadow-pop: 0 40px 120px -30px rgba(3, 7, 16, 0.8);
+  /* Footer dome: lavender halo, violet rim, a core darker than the page so the light text holds. */
+  --dome-halo: #8f8ce0;
+  --dome-halo-opacity: 0.8;
+  --dome-rim: #6c66d9;
+  --dome-core-a: #05071a;
+  --dome-core-b: #221d5c;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f3f1fb;
+  --bg-soft: #e9e5f7;
+  --card: #ffffff;
+  --card-2: #f6f4fd;
+  --glass: rgba(255, 255, 255, 0.66);
+  --line: rgba(48, 65, 115, 0.14);
+  --line-strong: rgba(48, 65, 115, 0.3);
+  --line-input: rgba(48, 65, 115, 0.62);
+  --text: #0b1426;
+  --text-2: #3a4566;
+  --text-3: #454d70;
+  --indigo: #304173;
+  --violet: #47458c;
+  --orchid: #6f6cc4;
+  --brand-grad: linear-gradient(110deg, #304173 0%, #47458c 50%, #6f6cc4 100%);
+  --dust-white: #a5a2ea;
+  --accent: #47458c;
+  --accent-strong: #3a3876;
+  --accent-soft: rgba(71, 69, 140, 0.09);
+  --focus: #47458c;
+  --glow: rgba(71, 69, 140, 0.35);
+  --btn-bg: linear-gradient(110deg, #304173 0%, #47458c 35%, #5c59ad 70%, #304173 100%);
+  --btn-text: #ffffff;
+  --phrase-grad: linear-gradient(100deg, #304173 0%, #47458c 50%, #6f6cc4 100%);
+  --ring-a: #304173;
+  --ring-b: #47458c;
+  --ring-c: #8f8ce0;
+  --comet: #47458c;
+  --icon-a: #8f8ce0;
+  --icon-b: #304173;
+  --hero-light: rgba(71, 69, 140, 0.16);
+  --hero-top: rgba(48, 65, 115, 0.1);
+  --statue-filter: brightness(1.02) contrast(1.04);
+  --statue-tint: 0.4;
+  --sweep: rgba(255, 255, 255, 0.75);
+  --duo-a: #304173;
+  --duo-b: #8f8ce0;
+  --amb-field: linear-gradient(180deg, #f4f2fc 0%, #efebfb 50%, #e8eaf9 100%);
+  --amb-indigo: rgba(48, 65, 115, 0.14);
+  --amb-violet: rgba(111, 108, 196, 0.24);
+  --amb-orchid: rgba(165, 155, 230, 0.42);
+  --aurora: linear-gradient(100deg, transparent 6%, rgba(71, 69, 140, 0.12) 28%, rgba(111, 108, 196, 0.18) 50%, rgba(165, 155, 230, 0.3) 68%, transparent 90%);
+  --star-opacity: 0.5;
+  --cursor-light: rgba(71, 69, 140, 0.07);
+  --cta-field: linear-gradient(100deg, #ffffff 0%, #eeebfa 32%, #dbd5f2 70%, #e5e9f6 100%);
+  --cta-glow: radial-gradient(ellipse 45% 120% at 88% 50%, rgba(71, 69, 140, 0.16), transparent 70%);
+  --cloud-opacity: 0.95;
+  --cloud-filter: none;
+  --sphere: radial-gradient(circle at 34% 28%, #ffffff 0%, #dbd5f2 26%, #6f6cc4 68%, #304173 100%);
+  --sphere-shadow: inset -16px -20px 36px rgba(22, 36, 64, 0.35), 0 22px 50px rgba(71, 69, 140, 0.25);
+  --danger: #c4264b;
+  --danger-text: #a8173a;
+  --neon: #3b82f6;
+  --neon-core: #2563eb;
+  --neon-glow: rgba(59, 130, 246, 0.5);
+  --shadow-pop: 0 40px 100px -30px rgba(22, 36, 64, 0.32);
+  --dome-halo: #b3aff0;
+  --dome-halo-opacity: 1;
+  --dome-rim: #7e78e0;
+  --dome-core-a: #070a1c;
+  --dome-core-b: #26216a;
+}
+
+/* ==========================================================================
+   Base
+   Estedad: geometric, low-contrast Persian sans whose heavy weights hold up as
+   display type (the mockup's bold rounded headline) and whose text weights stay
+   readable at 16px. Outfit: geometric Latin with the same round bowls, so the
+   few Latin words (numbers, VFX) sit in the same family voice.
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font-family: "Estedad Variable", Tahoma, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+/* The body stays transparent so the fixed ambient lights (z-index -1) show through. */
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.9;
+  font-synthesis: none;
+  transition: color 0.4s;
+}
+:lang(en) {
+  font-family: "Outfit Variable", "Estedad Variable", sans-serif;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+button {
+  border: 0;
+  background: none;
+  padding: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a[href],
+button:not(:disabled),
+summary,
+label[for],
+select,
+[role="button"] {
+  cursor: pointer;
+}
+:disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+h1,
+h2,
+h3,
+p,
+figure,
+ul {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  color: var(--text);
+  font-weight: 800;
+  line-height: 1.45;
+}
+h2 {
+  font-size: clamp(1.75rem, 1.2rem + 1.9vw, 2.6rem);
+}
+p {
+  color: var(--text-2);
+  line-height: 2;
+}
+img,
+svg {
+  max-width: 100%;
+}
+main {
+  overflow: clip;
+}
+.container {
+  width: min(1240px, 100% - 2 * clamp(18px, 4.5vw, 56px));
+  margin-inline: auto;
+}
+.icon-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Page-wide light (Ambient.tsx): three spectrum lights behind everything, moved by scroll. */
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--amb-field);
+  transition: background 0.4s;
+}
+/* One wide band of colour across the sky; the radial mask keeps its ends soft instead of cut. */
+.aurora {
+  position: absolute;
+  top: 0;
+  left: -20vw;
+  width: 140vw;
+  height: 70vh;
+  background: var(--aurora);
+  -webkit-mask-image: radial-gradient(ellipse 50% 46% at 50% 50%, #000 15%, transparent 72%);
+  mask-image: radial-gradient(ellipse 50% 46% at 50% 50%, #000 15%, transparent 72%);
+  will-change: transform;
+}
+/* The hero's stardust, continued behind the rest of the page as a still sky. */
+.star-layer {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 115vh;
+  opacity: var(--star-opacity);
+  will-change: transform;
+}
+.star-layer-near {
+  height: 140vh;
+}
+.star {
+  position: absolute;
+  border-radius: 50%;
+}
+.star-0 {
+  background: var(--dust-white);
+}
+.star-1 {
+  background: var(--orchid);
+}
+.star-2 {
+  background: var(--violet);
+}
+.star-bright {
+  box-shadow: 0 0 6px 1px color-mix(in srgb, var(--dust-white) 55%, transparent);
+}
+.blob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70vmax;
+  aspect-ratio: 1;
+  margin: -35vmax 0 0 -35vmax;
+  border-radius: 50%;
+  will-change: transform;
+}
+.blob-indigo {
+  background: radial-gradient(closest-side, var(--amb-indigo), transparent);
+}
+.blob-violet {
+  background: radial-gradient(closest-side, var(--amb-violet), transparent);
+}
+.blob-orchid {
+  background: radial-gradient(closest-side, var(--amb-orchid), transparent);
+}
+.cursor-light {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 640px;
+  height: 640px;
+  margin: -320px 0 0 -320px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, var(--cursor-light), transparent);
+  pointer-events: none;
+}
+.skip-link {
+  position: fixed;
+  top: 12px;
+  inset-inline-start: 12px;
+  z-index: 100;
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: var(--text);
+  color: var(--bg);
+  font-weight: 700;
+  transform: translateY(-160%);
+  transition: transform 0.25s;
+}
+.skip-link:focus {
+  transform: none;
+}
+.image-wrap {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background: var(--card-2);
+}
+.image-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.image-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 120px;
+  padding: 16px;
+  color: var(--text-2);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Buttons
+   Pill radius only for buttons and the nav (the mockup's language); cards
+   use 20-30px, inputs 12px.
+   ========================================================================== */
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  min-height: 50px;
+  padding: 0.7em 1.6em;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 650;
+  white-space: nowrap;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s,
+    background-color 0.3s,
+    border-color 0.3s,
+    color 0.3s;
+}
+.button svg {
+  font-size: 1.15em;
+}
+.button:active:not(:disabled) {
+  transform: translateY(0) scale(0.97);
+}
+.button:disabled {
+  opacity: 0.45;
+}
+/* The main action carries the page's only button glow. */
+/* The colour field slides across the spectrum on hover. */
+.button-primary {
+  background: var(--btn-bg);
+  background-size: 260% 100%;
+  background-position: 0% 50%;
+  color: var(--btn-text);
+  box-shadow: 0 12px 34px -12px var(--glow);
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s,
+    background-position 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.button-primary:hover {
+  background-position: 100% 50%;
+}
+.magnet {
+  display: inline-flex;
+}
+.button-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.45) 50%, transparent 70%);
+  transform: translateX(110%);
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 44px -12px var(--glow);
+}
+.button-primary:hover::after {
+  transform: translateX(-110%);
+}
+.button-ghost {
+  border-color: var(--line-strong);
+  background: color-mix(in srgb, var(--card) 55%, transparent);
+  color: var(--text);
+}
+.button-ghost:hover,
+.button-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+  transform: translateY(-2px);
+}
+.button-outline {
+  border-color: var(--line-strong);
+  color: var(--text);
+}
+.button-small {
+  min-height: 44px;
+  padding: 0.5em 1.25em;
+  font-size: 0.9rem;
+}
+.button-arrow {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.button:hover .button-arrow {
+  transform: translateX(-5px);
+}
+.icon-button {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--card) 65%, transparent);
+  color: var(--text);
+  font-size: 20px;
+  transition:
+    border-color 0.25s,
+    color 0.25s,
+    background-color 0.25s,
+    transform 0.2s,
+    opacity 0.25s;
+}
+.icon-button:hover:not(:disabled) {
+  border-color: var(--line-strong);
+  color: var(--accent-strong);
+}
+.icon-button:active:not(:disabled) {
+  transform: scale(0.92);
+}
+.icon-button:disabled {
+  opacity: 0.35;
+}
+.text-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--accent-strong);
+  font-weight: 650;
+  text-decoration: underline 1.5px transparent;
+  text-underline-offset: 7px;
+  transition: text-decoration-color 0.25s;
+}
+.text-button:hover {
+  text-decoration-color: currentColor;
+}
+.chevron {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.chevron.is-open {
+  transform: rotate(180deg);
+}
+
+/* ==========================================================================
+   Header
+   Glass #1 of 2: a framed bar, 80% of the page wide, floating over the hero.
+   A neon line travels around its edge.
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 50;
+  padding-top: 14px;
+  transition: padding 0.35s;
+  /* The closed mobile menu still takes up room inside this box; without this the empty
+     header area would swallow taps on the page beneath it. */
+  pointer-events: none;
+}
+.header-bar,
+.mobile-nav {
+  pointer-events: auto;
+}
+.site-header.is-compact {
+  padding-top: 8px;
+}
+.header-bar {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  width: 80%;
+  margin-inline: auto;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  transition:
+    background-color 0.35s,
+    box-shadow 0.35s;
+}
+.is-compact .header-bar,
+.menu-open .header-bar {
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  box-shadow: 0 18px 40px -28px rgba(0, 0, 0, 0.6);
+}
+/* ==========================================================================
+   Neon frame (Shared.tsx <NeonFrame>): a light that travels around an edge.
+   Centred on the 1px border, so the line runs exactly along the frame.
+   Always on for the header, the about card and the CTA; on service cards and
+   the open portfolio panel it only shows (and only runs) while active.
+   ========================================================================== */
+.neon-frame {
+  --neon-duration: 9s;
+  position: absolute;
+  z-index: 3;
+  inset: -0.5px;
+  width: calc(100% + 1px);
+  height: calc(100% + 1px);
+  overflow: visible;
+  pointer-events: none;
+  filter: drop-shadow(0 0 2px var(--neon-glow)) drop-shadow(0 0 8px var(--neon-glow));
+}
+.neon-frame rect {
+  fill: none;
+  stroke-linecap: round;
+  animation: neon-run var(--neon-duration) linear infinite;
+}
+/* Three dashes on the same loop make a comet: a faint long tail, a brighter trail and a
+   white head. Each starts further along the loop (negative delay) so they share a front edge. */
+.neon-tail {
+  stroke: var(--neon);
+  stroke-width: 1.5;
+  stroke-dasharray: 12 88;
+  opacity: 0.35;
+}
+.neon-frame .neon-trail {
+  stroke: var(--neon);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 94;
+  animation-delay: calc(var(--neon-duration) * -0.06);
+}
+.neon-frame .neon-head {
+  stroke: var(--neon-core);
+  stroke-width: 2;
+  stroke-dasharray: 1.5 98.5;
+  animation-delay: calc(var(--neon-duration) * -0.105);
+}
+.neon-frame:is(.is-hover, .is-active) {
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.neon-frame:is(.is-hover, .is-active) rect {
+  animation-play-state: paused;
+}
+.service-slot:is(:hover, :focus-within) .neon-frame,
+.panel.is-open .neon-frame {
+  opacity: 1;
+}
+.service-slot:is(:hover, :focus-within) .neon-frame rect,
+.panel.is-open .neon-frame rect {
+  animation-play-state: running;
+}
+.service-slot .neon-frame {
+  --neon-duration: 6s;
+}
+.panel .neon-frame {
+  --neon-duration: 7s;
+}
+.about-card .neon-frame {
+  --neon-duration: 11s;
+}
+.cta-card .neon-frame {
+  --neon-duration: 13s;
+}
+/* A horizontal version: a short streak of light gliding along a 1px rule. */
+.neon-line {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 1px;
+  background: var(--line);
+  pointer-events: none;
+}
+.neon-line.is-reverse {
+  top: auto;
+  bottom: 0;
+}
+.neon-line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--neon) 60%, var(--neon-core) 92%, transparent);
+  filter: drop-shadow(0 0 4px var(--neon-glow));
+  animation: neon-slide 9s linear infinite;
+}
+.neon-line.is-reverse::after {
+  animation-direction: reverse;
+  animation-delay: -4s;
+}
+@keyframes neon-slide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(560%);
+  }
+}
+@keyframes neon-run {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+.brand {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+}
+/* Placeholder until the real logo file arrives. */
+.logo-slot {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1.5px dashed var(--line-strong);
+  border-radius: 12px;
+  color: var(--text-3);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+.brand-name {
+  color: var(--text);
+  font-size: 1.12rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.nav-pill {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 8px 15px;
+  border-radius: 999px;
+  color: var(--text-2);
+  font-size: 0.92rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.25s, background-color 0.25s;
+}
+.nav-link[href]:hover {
+  color: var(--text);
+}
+.nav-link.is-active {
+  color: var(--accent-strong);
+  font-weight: 650;
+}
+.nav-indicator {
+  position: absolute;
+  inset-inline: 16px;
+  bottom: 5px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--brand-grad);
+}
+.nav-link.is-soon {
+  color: var(--text-3);
+}
+.nav-link.is-soon small {
+  padding: 1px 8px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--text-3);
+  font-size: 0.68rem;
+  line-height: 1.7;
+}
+.header-actions {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.header-cta {
+  min-height: 44px;
+  padding-inline: 1.3em;
+  font-size: 0.88rem;
+}
+.menu-toggle,
+.mobile-nav {
+  display: none;
+}
+/* Reading position on a long page. Grows from the right, the RTL start. */
+.scroll-progress {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 2px;
+  background: var(--brand-grad);
+  transform-origin: 100% 50%;
+}
+.theme-toggle svg {
+  overflow: visible;
+}
+.theme-core,
+.theme-bite,
+.theme-rays {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    transform 0.6s cubic-bezier(0.65, 0, 0.35, 1),
+    opacity 0.4s;
+}
+.theme-toggle[data-dark="true"] .theme-rays {
+  opacity: 0;
+  transform: scale(0.4) rotate(-70deg);
+}
+.theme-toggle[data-dark="false"] .theme-core {
+  transform: scale(0.6);
+}
+.theme-toggle[data-dark="false"] .theme-bite {
+  transform: translate(10px, -10px);
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: max(760px, 100svh);
+  padding-top: 132px;
+  padding-bottom: 210px;
+  overflow: clip;
+}
+/* Backlight behind the statue: separates the focal point from the dark page. */
+.hero-backlight {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 42% 52% at 28% 44%, var(--hero-light), transparent 70%),
+    radial-gradient(ellipse 90% 45% at 50% 0%, var(--hero-top), transparent 70%);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: 24px;
+}
+.hero-copy {
+  position: relative;
+  z-index: 3;
+  max-width: 620px;
+}
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  color: var(--text-2);
+  font-size: 1rem;
+}
+.hero-eyebrow span {
+  width: 46px;
+  height: 1.5px;
+  background: linear-gradient(to right, var(--orchid), var(--indigo) 60%, transparent);
+}
+.hero h1 {
+  font-size: clamp(2.5rem, 1.3rem + 4.3vw, 4.9rem);
+  font-weight: 850;
+  line-height: 1.34;
+}
+.h1-top {
+  display: block;
+}
+.h1-rotator {
+  display: block;
+  min-height: 1.34em;
+}
+.h1-word {
+  display: inline-block;
+  padding-bottom: 0.08em;
+  background: var(--phrase-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero-description {
+  min-height: 4.2em;
+  margin-top: 18px;
+}
+.hero-description p {
+  max-width: 30em;
+  font-size: 1.08rem;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+.hero-visual {
+  position: relative;
+  z-index: 2;
+  justify-self: center;
+  width: min(100%, 620px);
+  aspect-ratio: 640 / 700;
+}
+.layer {
+  position: absolute;
+  inset: 0;
+}
+.hero-rings {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.statue-layer {
+  isolation: isolate;
+  filter: var(--statue-filter);
+}
+.statue {
+  position: absolute;
+  top: 2%;
+  inset-inline: 13%;
+  display: block;
+  width: 74%;
+  height: auto;
+}
+.statue-rise {
+  position: absolute;
+  inset: 0;
+}
+.statue-light,
+.statue-sheen {
+  position: absolute;
+  top: 2%;
+  inset-inline: 13%;
+  aspect-ratio: 1100 / 1575;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  pointer-events: none;
+}
+/* Colour grade across the spectrum: orchid highlights at the top, indigo shadows below. */
+.statue-light {
+  background: linear-gradient(165deg, var(--duo-b) 0%, var(--violet) 42%, var(--indigo) 80%);
+  mix-blend-mode: color;
+  opacity: var(--statue-tint);
+}
+/* A band of light that passes over the marble every few seconds. */
+.statue-sheen {
+  background: linear-gradient(105deg, transparent 40%, var(--sweep) 50%, transparent 60%);
+  background-size: 320% 100%;
+  background-position: 115% 0;
+  mix-blend-mode: soft-light;
+  animation: sheen 8s cubic-bezier(0.6, 0, 0.4, 1) 2.6s infinite;
+}
+@keyframes sheen {
+  0% {
+    background-position: 115% 0;
+  }
+  45%,
+  100% {
+    background-position: -15% 0;
+  }
+}
+.stardust {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.ring-group {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 1.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.ring-line,
+.ring-glow,
+.ring-comet {
+  fill: none;
+}
+.ring-line {
+  stroke-width: 2.2;
+}
+.ring-glow {
+  stroke-width: 10;
+  stroke-opacity: 0.4;
+}
+.ring-comet {
+  stroke: var(--comet);
+  stroke-linecap: round;
+  animation:
+    comet var(--speed, 12s) linear 2.6s infinite,
+    comet-in 1.2s ease 2.6s both;
+}
+.ring-comet-trail {
+  --o: 0;
+  stroke-width: 3;
+  stroke-opacity: 0.35;
+  stroke-dasharray: 110 890;
+}
+.ring-comet-head {
+  --o: -94;
+  stroke-width: 3.6;
+  stroke-dasharray: 16 984;
+}
+@keyframes comet {
+  from {
+    stroke-dashoffset: var(--o);
+  }
+  to {
+    stroke-dashoffset: calc(var(--o) - 1000);
+  }
+}
+@keyframes comet-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.cloud-layer {
+  pointer-events: none;
+}
+.cloud-layer img {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: var(--cloud-opacity);
+  filter: var(--cloud-filter);
+  animation: drift 40s ease-in-out infinite alternate;
+}
+.cloud-back {
+  inset: auto -8% -9% -50%;
+  z-index: 4;
+}
+/* Fades out before the hero's edge so the bank never ends on a hard line. */
+.cloud-front {
+  position: absolute;
+  z-index: 4;
+  inset-inline: -5%;
+  bottom: 0;
+  transform: scaleX(-1);
+  -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent 94%);
+  mask-image: linear-gradient(to bottom, #000 40%, transparent 94%);
+}
+.cloud-front img {
+  min-width: 1100px;
+  animation-duration: 55s;
+}
+@keyframes drift {
+  from {
+    transform: translateX(-2.5%);
+  }
+  to {
+    transform: translateX(2.5%);
+  }
+}
+.hero-slides {
+  position: absolute;
+  z-index: 5;
+  top: 46%;
+  inset-inline-end: clamp(10px, 2.4vw, 40px);
+  translate: 0 -50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.slide-dot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 48px;
+  min-height: 44px;
+  padding: 4px;
+  color: var(--text-3);
+  transition: color 0.3s;
+}
+.slide-dot:hover {
+  color: var(--text);
+}
+.slide-dot.is-active {
+  color: var(--text);
+}
+.slide-num {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  transition: font-size 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.slide-dot.is-active .slide-num {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.slide-track {
+  display: block;
+  width: 28px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--line-strong);
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.slide-dot.is-active .slide-track {
+  opacity: 1;
+}
+.slide-fill {
+  display: block;
+  height: 100%;
+  background: var(--brand-grad);
+  transform-origin: 100% 50%;
+  animation-name: slide-fill;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+@keyframes slide-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.slide-pause {
+  margin-top: 8px;
+  font-size: 17px;
+}
+/* The pause control stops every looping motion in the hero. */
+.hero[data-paused="true"] .slide-fill,
+.hero[data-paused="true"] .ring-comet,
+.hero[data-paused="true"] .statue-sheen,
+.hero[data-paused="true"] .cloud-layer img {
+  animation-play-state: paused;
+}
+
+/* ==========================================================================
+   About
+   Glass #2 of 2: the card overlaps the hero's clouds and statue.
+   ========================================================================== */
+.about {
+  position: relative;
+  z-index: 6;
+  margin-top: -170px;
+  padding-bottom: 30px;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 44px;
+}
+.about-card {
+  position: relative;
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  padding: clamp(28px, 4vw, 48px);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  backdrop-filter: blur(20px) saturate(140%);
+}
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: var(--text-2);
+  font-size: 0.95rem;
+}
+.kicker span {
+  width: 34px;
+  height: 1.5px;
+  background: var(--brand-grad);
+}
+.about-card h2 span {
+  display: block;
+}
+.accent-text {
+  color: var(--accent-strong);
+}
+.about-text {
+  max-width: 34em;
+  margin-top: 14px;
+}
+.about-toggle {
+  margin-top: 24px;
+}
+.about-more {
+  overflow: hidden;
+}
+.about-more p {
+  max-width: 34em;
+  padding-top: 18px;
+}
+.accent-text .word {
+  background: var(--phrase-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.word-reveal .word {
+  display: inline-block;
+}
+
+/* Photo composition: main frame, a smaller detail photo with deeper parallax, a turning badge. */
+.about-visual {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1;
+  min-height: 470px;
+}
+.about-frame {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  inset-inline-start: 0;
+  width: 80%;
+  padding: 2px;
+  border-radius: 32px;
+  background: conic-gradient(from var(--angle, 40deg), var(--indigo), var(--violet), var(--orchid), var(--indigo));
+}
+.about-main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  background: var(--card);
+}
+.about-main-inner {
+  position: absolute;
+  inset: -8% 0;
+}
+.about-main-inner .image-wrap,
+.about-detail .image-wrap {
+  height: 100%;
+}
+.about-detail-wrap {
+  position: absolute;
+  z-index: 2;
+  bottom: -7%;
+  inset-inline-end: 0;
+  width: 42%;
+}
+/* Lifted above the main photo, so it carries the section's one shadow. */
+.about-detail {
+  aspect-ratio: 4 / 3;
+  border: 5px solid var(--bg);
+  border-radius: 24px;
+  box-shadow: 0 30px 60px -28px rgba(0, 0, 0, 0.65);
+}
+.about-badge {
+  position: absolute;
+  z-index: 3;
+  top: 7%;
+  inset-inline-end: 5%;
+  display: grid;
+  place-items: center;
+  width: 124px;
+  height: 124px;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--card) 82%, transparent);
+}
+.about-badge .badge-text {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.about-badge text {
+  fill: var(--text-2);
+  font-size: 11.5px;
+  font-weight: 600;
+}
+.badge-core {
+  color: var(--orchid);
+  font-size: 34px;
+}
+
+/* Photos rest in the brand colour grade and return to natural colour on hover. */
+.duo {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.duo img {
+  filter: grayscale(1) contrast(1.12) brightness(0.92);
+  transition:
+    filter 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.duo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(140deg, var(--duo-a) 10%, var(--violet) 50%, var(--duo-b) 95%);
+  mix-blend-mode: color;
+  opacity: 0.9;
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+.duo:hover::after {
+  opacity: 0;
+}
+.duo:hover img {
+  filter: none;
+}
+
+/* ==========================================================================
+   Clients: logos drifting slowly to the right (Clients.tsx drives the motion).
+   ========================================================================== */
+.clients {
+  padding-top: clamp(56px, 7vw, 90px);
+}
+.clients-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.clients-title {
+  color: var(--text-2);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.clients-strip {
+  position: relative;
+  padding-block: 28px;
+  overflow: hidden;
+  /* Logos fade in and out at the edges instead of being cut off. */
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+.clients-track {
+  display: flex;
+  width: max-content;
+}
+.clients-group {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: clamp(44px, 5vw, 76px);
+  margin: 0;
+  padding: 0;
+  /* Same as the gap, so the seam between two copies is invisible. */
+  padding-inline-end: clamp(44px, 5vw, 76px);
+}
+.client {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  direction: ltr;
+  color: var(--text-3);
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  transition: color 0.4s;
+}
+.client:hover {
+  color: var(--text);
+}
+.client img {
+  display: block;
+  width: auto;
+  height: 32px;
+}
+.client-mark {
+  flex: none;
+  width: 1.05em;
+  height: 1.05em;
+}
+.clients-strip.is-static {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+.is-static .clients-track {
+  width: auto;
+  justify-content: center;
+}
+.is-static .clients-group {
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 18px;
+  padding-inline: 20px;
+}
+.clients-note {
+  margin-top: 10px;
+  color: var(--text-3);
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Section titles
+   ========================================================================== */
+.section {
+  padding-block: clamp(84px, 9vw, 128px);
+}
+.section-title {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 44px;
+  text-align: center;
+}
+.section-title h2 {
+  font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.25rem);
+}
+.st-rule {
+  width: min(150px, 100%);
+  height: 1.5px;
+}
+.st-rule-start {
+  justify-self: end;
+  background: linear-gradient(to right, var(--orchid), var(--violet) 40%, transparent);
+  transform-origin: 0 50%;
+}
+.st-rule-end {
+  justify-self: start;
+  background: linear-gradient(to left, var(--indigo), var(--violet) 40%, transparent);
+  transform-origin: 100% 50%;
+}
+.st-subtitle {
+  grid-column: 1 / -1;
+  margin-top: -14px;
+}
+
+/* ==========================================================================
+   Services
+   Six peer services with equal weight, scanned like a menu: an even grid is
+   deliberate. Each card is a photo that opens the service's own page.
+   ========================================================================== */
+.services {
+  padding-block: clamp(70px, 8vw, 110px) clamp(40px, 5vw, 64px);
+}
+.portfolio {
+  padding-block: clamp(40px, 5vw, 64px) clamp(56px, 6vw, 84px);
+}
+/* Bento: wide, tall and square cards in unequal columns that lock together. */
+.services-grid {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 0.9fr;
+  grid-template-areas:
+    "a a b"
+    "c d b"
+    "e f f";
+  grid-auto-rows: clamp(220px, 21vw, 280px);
+  gap: 18px;
+}
+.service-slot {
+  position: relative;
+  min-width: 0;
+  list-style: none;
+}
+.service-slot:nth-child(1) { grid-area: a; }
+.service-slot:nth-child(2) { grid-area: b; }
+.service-slot:nth-child(3) { grid-area: c; }
+.service-slot:nth-child(4) { grid-area: d; }
+.service-slot:nth-child(5) { grid-area: e; }
+.service-slot:nth-child(6) { grid-area: f; }
+/* Photo cards: the title sits on the image; hover or keyboard focus dims the photo
+   and lifts the full description in from below. Each card opens its service page. */
+.service-card {
+  position: relative;
+  isolation: isolate;
+  display: block;
+  height: 100%;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--card-2);
+  color: #ffffff;
+}
+.service-card .service-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+.service-image img {
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+/* Shade under the title, so it reads on any photo. */
+.service-card::before,
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.service-card::before {
+  background: linear-gradient(to top, rgba(11, 20, 38, 0.88) 0%, rgba(11, 20, 38, 0.5) 30%, transparent 60%);
+}
+.service-card::after {
+  background: linear-gradient(to top, rgba(11, 20, 38, 0.6), rgba(11, 20, 38, 0.3));
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.service-temp {
+  position: absolute;
+  top: 14px;
+  inset-inline-start: 14px;
+}
+.service-content {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  display: grid;
+  padding: 22px;
+}
+.service-title {
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.7;
+}
+.service-latin {
+  display: inline-block;
+  font-weight: 600;
+  opacity: 0.8;
+}
+/* Collapsed to zero height until hover; the 0fr → 1fr track animates the real text height. */
+.service-more {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.service-more-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+.service-description,
+.service-link {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.45s,
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.service-description {
+  display: block;
+  padding-top: 8px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.94rem;
+  line-height: 1.9;
+}
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  font-weight: 650;
+  transition-delay: 0.06s;
+}
+.service-link svg {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.service-card:hover .service-image img,
+.service-card:focus-visible .service-image img {
+  transform: scale(1.04);
+}
+.service-card:hover::after,
+.service-card:focus-visible::after {
+  opacity: 1;
+}
+.service-card:hover .service-more,
+.service-card:focus-visible .service-more {
+  grid-template-rows: 1fr;
+}
+.service-card:hover :is(.service-description, .service-link),
+.service-card:focus-visible :is(.service-description, .service-link) {
+  opacity: 1;
+  transform: none;
+}
+.service-card:hover .service-link svg {
+  transform: translateX(-3px);
+}
+/* No hover on touch screens: show the description from the start. */
+@media (hover: none) {
+  .service-card::after {
+    opacity: 0.7;
+  }
+  .service-more {
+    grid-template-rows: 1fr;
+  }
+  .service-description,
+  .service-link {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   Detail pages (/services/:id, /projects/:id), DetailPage.tsx
+   ========================================================================== */
+.detail-page {
+  padding-block: 32px clamp(64px, 8vw, 110px);
+}
+.detail-page-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  color: var(--text-2);
+  font-weight: 500;
+  transition: color 0.25s;
+}
+.detail-page-back:hover {
+  color: var(--text);
+}
+.detail-page-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 72px);
+  margin-top: 20px;
+}
+.detail-page-media {
+  position: relative;
+  aspect-ratio: 5 / 6;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+}
+.detail-page-media .image-wrap {
+  height: 100%;
+}
+.detail-page-text h1 {
+  margin-bottom: 16px;
+  font-size: clamp(1.8rem, 1.3rem + 2vw, 2.7rem);
+  line-height: 1.5;
+}
+.detail-page-text p {
+  max-width: 52ch;
+  margin-bottom: 28px;
+  color: var(--text-2);
+  font-size: 1.05rem;
+  line-height: 2;
+}
+.detail-page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 24px;
+}
+.detail-temp {
+  position: absolute;
+  top: 14px;
+  inset-inline-start: 14px;
+}
+.detail-page-others {
+  margin-top: clamp(56px, 7vw, 88px);
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.detail-page-others h2 {
+  margin-bottom: 14px;
+  font-size: 1.1rem;
+}
+.detail-page-others ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+}
+.detail-page-others a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 18px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--text-2);
+  transition:
+    color 0.25s,
+    border-color 0.25s;
+}
+.detail-page-others a:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+@media (max-width: 860px) {
+  .detail-page-grid {
+    grid-template-columns: 1fr;
+  }
+  .detail-page-media {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* ==========================================================================
+   Statistics (built, not rendered until real figures exist)
+   ========================================================================== */
+.glyph {
+  overflow: visible;
+}
+.g-cut {
+  fill: var(--card);
+}
+.stats-section {
+  padding-block: 10px;
+}
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 26px 10px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--card);
+}
+.stat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 6px 12px;
+}
+.stat + .stat {
+  border-inline-start: 1px solid var(--line);
+}
+.stat-icon {
+  font-size: 44px;
+  line-height: 0;
+}
+.stat-copy strong {
+  display: block;
+  color: var(--text);
+  font-size: 1.9rem;
+  font-weight: 850;
+  line-height: 1.4;
+}
+.stat-copy span {
+  color: var(--text-2);
+}
+
+/* ==========================================================================
+   Portfolio: expanding panels. One project is open; the others wait as slices.
+   ========================================================================== */
+.st-subtitle p {
+  font-size: 0.98rem;
+}
+.panels {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  height: clamp(420px, 40vw, 540px);
+  margin: 0;
+  padding: 0;
+}
+.panel {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  transition: flex-grow 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.panel.is-open {
+  flex-grow: 4.2;
+}
+.panel-button {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--card);
+  text-align: start;
+}
+.panel-photo {
+  position: absolute;
+  inset: 0;
+}
+.panel-photo .image-wrap {
+  height: 100%;
+}
+.panel.is-open .duo::after {
+  opacity: 0;
+}
+.panel.is-open .duo img {
+  filter: none;
+  transform: scale(1.03);
+}
+/* Captions sit on a dark scrim in both themes, so white text keeps its contrast on any photo. */
+.panel-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(11, 20, 38, 0.85) 0%, rgba(11, 20, 38, 0.35) 38%, transparent 62%);
+  pointer-events: none;
+}
+.panel-index {
+  position: absolute;
+  z-index: 2;
+  top: 14px;
+  inset-inline-start: 14px;
+  padding: 1px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(11, 20, 38, 0.72);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+.panel-caption {
+  position: absolute;
+  z-index: 2;
+  inset-inline: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 22px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.35s,
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.panel.is-open .panel-caption {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.25s;
+}
+.panel-category {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.panel-text {
+  display: grid;
+  gap: 4px;
+}
+.panel-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.panel-link svg {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.panel-button:hover .panel-link svg {
+  transform: translateX(-3px);
+}
+.temp-label {
+  flex: none;
+  padding: 2px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: rgba(11, 20, 38, 0.55);
+  color: #ffffff;
+  font-size: 0.72rem;
+  line-height: 1.8;
+}
+
+/* Touch layout (Portfolio.tsx <ProjectCarousel>): a swipeable row of cards.
+   The script writes --d (signed distance from the centre, in card widths) and --p (its size)
+   on every card while it scrolls; the centred card is the "open panel" of the touch layout. */
+.pf-carousel {
+  --card-w: min(74vw, 330px);
+}
+.pf-track {
+  list-style: none;
+  display: flex;
+  gap: 14px;
+  /* Full bleed, so the neighbouring cards peek in from the screen edges and invite a swipe. */
+  margin: 0 calc(50% - 50vw);
+  padding: 18px calc(50vw - var(--card-w) / 2) 22px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.pf-track::-webkit-scrollbar {
+  display: none;
+}
+.pf-slide {
+  flex: none;
+  width: var(--card-w);
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+.pf-lift {
+  position: relative;
+  border-radius: 24px;
+  transform: perspective(1100px) rotateY(calc(var(--d, 0) * -16deg)) scale(calc(1 - var(--p, 0) * 0.12));
+  /* Side cards shrink and turn around the edge that faces the centre, so the sliver that peeks
+     in from the screen edge stays in view and invites the swipe. */
+  transform-origin: calc(50% - var(--d, 0) * 50%) 50%;
+}
+.pf-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--card);
+  transition: border-color 0.4s;
+}
+.pf-slide.is-active .pf-card {
+  border-color: var(--line-strong);
+}
+.pf-card:active {
+  transform: scale(0.98);
+}
+.pf-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(11, 20, 38, 0.88) 0%, rgba(11, 20, 38, 0.4) 34%, transparent 60%);
+  pointer-events: none;
+}
+/* The photo is wider than its card and drifts against the swipe, like a view through a window. */
+.pf-photo {
+  position: absolute;
+  inset: 0 -14%;
+  transform: translateX(calc(var(--d, 0) * -10%));
+}
+.pf-photo .image-wrap {
+  height: 100%;
+}
+/* Colour follows the position, not a hover: duotone at the sides, full colour at the centre. */
+.pf-slide .duo img {
+  filter: grayscale(var(--p, 0)) contrast(calc(1 + var(--p, 0) * 0.12));
+  transition: none;
+}
+.pf-slide .duo::after {
+  opacity: calc(var(--p, 0) * 0.9);
+  transition: none;
+}
+.pf-caption {
+  position: absolute;
+  z-index: 2;
+  inset-inline: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 20px;
+  opacity: calc(1 - var(--p, 0) * 0.55);
+  transform: translateY(calc(var(--p, 0) * 14px));
+}
+.pf-caption .panel-category {
+  font-size: 1.15rem;
+  white-space: normal;
+}
+.pf-slide .neon-frame {
+  --neon-duration: 7s;
+}
+.pf-slide.is-active .neon-frame {
+  opacity: 1;
+}
+.pf-slide.is-active .neon-frame rect {
+  animation-play-state: running;
+}
+.pf-carousel.is-still :is(.pf-lift, .pf-photo, .pf-caption) {
+  transform: none;
+}
+.pf-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 6px;
+}
+.pf-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 650;
+}
+.pf-count.is-total {
+  color: var(--text-2);
+}
+.pf-bar {
+  width: clamp(90px, 28vw, 180px);
+  height: 2px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--line-strong);
+}
+.pf-bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--brand-grad);
+  transform-origin: right center;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+/* Tablets: wider cards, so two and a half fit and the row reads as a gallery. */
+@media (min-width: 761px) {
+  .pf-carousel {
+    --card-w: clamp(300px, 42vw, 430px);
+  }
+}
+
+/* ==========================================================================
+   Final call to action
+   ========================================================================== */
+.cta-section {
+  padding-block: 20px clamp(80px, 9vw, 120px);
+}
+.cta-card {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(20px, 4vw, 56px);
+  padding: 34px clamp(24px, 4vw, 56px);
+  border: 1px solid var(--line-strong);
+  border-radius: 30px;
+  /* --shift is driven by scroll (Contact.tsx): the field slides from indigo toward orchid. */
+  background: var(--cta-glow), var(--cta-field);
+  background-size: auto, 240% 100%;
+  background-position: center, var(--shift, 0%) 50%;
+  overflow: hidden;
+}
+.cta-orb {
+  position: relative;
+  width: 190px;
+  height: 190px;
+}
+.orb-tilt {
+  position: absolute;
+  inset: -40px -80px;
+}
+.orb-rings {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.orb-sphere {
+  position: absolute;
+  inset: 22px;
+  border-radius: 50%;
+  background: var(--sphere);
+  box-shadow: var(--sphere-shadow);
+}
+.cta-copy h2 {
+  font-size: clamp(1.35rem, 1rem + 1.3vw, 2rem);
+}
+.cta-copy p {
+  margin-top: 6px;
+}
+.cta-button {
+  justify-self: end;
+}
+.cta-clouds {
+  position: absolute;
+  z-index: -1;
+  inset-inline: 0;
+  bottom: -38%;
+  width: 100%;
+  min-width: 900px;
+  height: auto;
+  opacity: calc(var(--cloud-opacity) * 0.6);
+  filter: var(--cloud-filter);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+/* The footer sits inside a glowing dome. Its core is dark in both themes, so the
+   footer always uses the dark palette for its own text. */
+.site-footer {
+  --text: #f1eefb;
+  --text-2: #c9c5e6;
+  --text-3: #aaa7cc;
+  --line: rgba(219, 213, 242, 0.14);
+  --line-strong: rgba(219, 213, 242, 0.3);
+  --accent: #a5a2ea;
+  --accent-strong: #d6d2f7;
+  --focus: #dbd5f2;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-top: clamp(150px, 13vw, 200px);
+  color: var(--text);
+  color-scheme: dark;
+}
+.footer-dome {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.footer-dome svg {
+  position: absolute;
+  inset: 0 0 auto;
+  display: block;
+  max-width: none;
+}
+.dome-body {
+  position: absolute;
+  inset: calc(var(--dome-band) - 1px) 0 0;
+  background: var(--dome-core-a);
+}
+/* A fine grain over the dome dithers the dark gradients, so they read as smooth light, not steps. */
+.footer-dome::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.09;
+  mix-blend-mode: overlay;
+  mask-image: linear-gradient(to bottom, transparent 40px, #000 140px);
+}
+.dome-halo {
+  fill: var(--dome-halo);
+  opacity: var(--dome-halo-opacity);
+}
+.dome-rim {
+  fill: var(--dome-rim);
+}
+.footer-inner {
+  width: min(960px, 100% - 2 * clamp(24px, 6vw, 64px));
+  margin-inline: auto;
+}
+.footer-head {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  text-align: center;
+}
+.footer-head .brand {
+  justify-self: center;
+}
+.footer-tagline {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 0.95rem;
+}
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 32px 40px;
+  margin-top: clamp(36px, 5vw, 56px);
+}
+.footer-title {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+.footer-contact {
+  font-style: normal;
+}
+.footer-contact ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.footer-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--text-2);
+  font-size: 0.92rem;
+  line-height: 1.8;
+}
+.footer-contact svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 0.3em;
+  color: var(--accent);
+}
+.footer-contact a {
+  transition: color 0.25s;
+}
+.footer-contact a:hover {
+  color: var(--accent-strong);
+}
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.footer-nav a,
+.footer-nav span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 36px;
+  color: var(--text-2);
+  font-size: 0.92rem;
+  transition: color 0.25s;
+}
+.footer-nav a:hover {
+  color: var(--accent-strong);
+}
+.footer-nav .is-soon {
+  color: var(--text-3);
+}
+.footer-nav small {
+  font-size: 0.75rem;
+}
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.social {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgba(219, 213, 242, 0.04);
+  color: var(--text-2);
+  font-size: 20px;
+  transition: color 0.25s, border-color 0.25s;
+}
+a.social:hover {
+  border-color: var(--line-strong);
+  color: var(--accent-strong);
+}
+.social.is-soon {
+  border-style: dashed;
+  border-color: var(--line-strong);
+  color: var(--text-3);
+}
+.socials-note {
+  flex-basis: 100%;
+  color: var(--text-3);
+  font-size: 0.78rem;
+}
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 24px;
+  margin-top: clamp(32px, 4vw, 48px);
+  padding-block: 18px 26px;
+  border-top: 1px solid var(--line);
+}
+.footer-bottom p {
+  margin: 0;
+  color: var(--text-3);
+  font-size: 0.84rem;
+  line-height: 1.9;
+}
+.footer-bottom a {
+  color: var(--text-2);
+  text-decoration: underline 1px;
+  text-underline-offset: 4px;
+}
+.footer-bottom a:hover {
+  color: var(--accent-strong);
+}
+
+/* ==========================================================================
+   Dialog and form
+   The modal is the one surface that earns a large shadow: it sits above the page.
+   ========================================================================== */
+.dialog {
+  width: min(520px, 100% - 32px);
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 24px;
+  background: var(--card);
+  color: var(--text);
+  box-shadow: var(--shadow-pop);
+}
+.dialog[open] {
+  animation: dialog-in 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.dialog::backdrop {
+  background: rgba(7, 13, 26, 0.7);
+}
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+}
+.dialog-content {
+  position: relative;
+  max-height: calc(100dvh - 34px);
+  padding: 30px;
+  overflow-y: auto;
+}
+.dialog-close {
+  position: absolute;
+  top: 18px;
+  inset-inline-end: 18px;
+}
+.dialog h2 {
+  margin-inline-end: 54px;
+  font-size: 1.45rem;
+}
+.form-note {
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  font-size: 0.88rem;
+  line-height: 1.9;
+}
+.dialog form {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+.field label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 11px 14px;
+  border: 1px solid var(--line-input);
+  border-radius: 12px;
+  background: var(--bg-soft);
+  color: var(--text);
+  transition: border-color 0.25s;
+}
+.field textarea {
+  resize: vertical;
+}
+.field input:hover,
+.field select:hover,
+.field textarea:hover {
+  border-color: var(--accent);
+}
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible {
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+.field ::placeholder {
+  color: var(--text-3);
+  opacity: 1;
+}
+.field [aria-invalid="true"] {
+  border-color: var(--danger);
+  border-width: 2px;
+}
+.field-error {
+  margin-top: 6px;
+  color: var(--danger-text);
+  font-size: 0.86rem;
+  line-height: 1.8;
+}
+.field-error::before {
+  content: "خطا: ";
+  font-weight: 700;
+}
+.form-submit {
+  width: 100%;
+  margin-top: 4px;
+}
+.form-done {
+  padding-block: 18px 6px;
+  text-align: center;
+}
+.form-done h2 {
+  margin-inline: 40px;
+}
+.form-done p {
+  margin-block: 12px 22px;
+}
+
+/* ==========================================================================
+   Theme switch: the new theme grows as a circle from the toggle (theme.ts).
+   ========================================================================== */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 1360px) {
+  .header-cta {
+    display: none;
+  }
+}
+@media (max-width: 1200px) {
+  .nav-link {
+    padding-inline: 12px;
+  }
+}
+@media (max-width: 1040px) {
+  .header-bar {
+    grid-template-columns: 1fr auto;
+  }
+  .nav-pill {
+    display: none;
+  }
+  .menu-toggle {
+    display: inline-grid;
+  }
+  .mobile-nav {
+    display: grid;
+    width: 80%;
+    margin-inline: auto;
+    gap: 2px;
+    margin-top: 8px;
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: var(--card);
+    box-shadow: var(--shadow-pop);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition:
+      opacity 0.3s,
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 0.3s;
+  }
+  .menu-open .mobile-nav {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+  .mobile-nav .nav-link {
+    min-height: 48px;
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-size: 1rem;
+  }
+  .mobile-nav .nav-link.is-active {
+    background: var(--accent-soft);
+  }
+  .mobile-nav .button {
+    margin-top: 8px;
+  }
+}
+@media (max-width: 960px) {
+  .hero {
+    min-height: 0;
+    padding-top: 112px;
+    padding-bottom: 170px;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .hero-copy {
+    max-width: none;
+  }
+  .hero-visual {
+    width: min(86vw, 460px);
+    margin-top: 6px;
+  }
+  .hero-slides {
+    position: relative;
+    top: auto;
+    inset-inline-end: auto;
+    translate: none;
+    z-index: 5;
+    flex-direction: row;
+    justify-content: center;
+    gap: 4px;
+    width: fit-content;
+    margin: -40px auto 0;
+  }
+  .slide-pause {
+    margin-top: 0;
+    margin-inline-start: 6px;
+  }
+  .about {
+    margin-top: -110px;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .about-card {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .about-visual {
+    grid-column: 1;
+    grid-row: 2;
+    min-height: 400px;
+    margin-bottom: 70px;
+  }
+  .about-frame {
+    width: 84%;
+  }
+  .about-detail-wrap {
+    width: 46%;
+  }
+  .about-badge {
+    width: 100px;
+    height: 100px;
+  }
+  .about-badge text {
+    font-size: 10.5px;
+  }
+  .badge-core {
+    font-size: 26px;
+  }
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "a a"
+      "b c"
+      "b d"
+      "e f";
+  }
+  .cta-card {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding-top: 26px;
+    text-align: center;
+  }
+  .cta-orb {
+    width: 150px;
+    height: 150px;
+  }
+  .cta-button {
+    justify-self: center;
+  }
+  .footer-main {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+  .footer-contact li {
+    justify-content: center;
+  }
+  .footer-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 20px;
+  }
+  .footer-nav .footer-title {
+    flex-basis: 100%;
+  }
+  .socials {
+    justify-content: center;
+  }
+  .footer-bottom {
+    justify-content: center;
+    text-align: center;
+  }
+}
+@media (max-width: 640px) {
+  /* 80% is too narrow for the logo and three buttons on a phone. */
+  .header-bar,
+  .mobile-nav {
+    width: calc(100% - 24px);
+  }
+  .brand-name {
+    font-size: 1rem;
+  }
+  .logo-slot {
+    width: 38px;
+    height: 38px;
+  }
+  .header-actions {
+    gap: 6px;
+  }
+  .hero-description {
+    min-height: 6em;
+  }
+  .hero-actions > * {
+    flex: 1 1 100%;
+  }
+  .magnet > .button {
+    width: 100%;
+  }
+  .magnet:has(.cta-button) {
+    width: 100%;
+  }
+  .about-visual {
+    min-height: 330px;
+  }
+  .section-title {
+    gap: 14px;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: none;
+    grid-auto-rows: 260px;
+  }
+  .service-slot:nth-child(n) {
+    grid-area: auto;
+  }
+  .client {
+    font-size: 1.2rem;
+  }
+  .stats-bar {
+    grid-template-columns: 1fr;
+  }
+  .stat + .stat {
+    border-inline-start: 0;
+    border-top: 1px solid var(--line);
+  }
+  .cta-button {
+    width: 100%;
+  }
+  .dialog-content {
+    padding: 24px 20px;
+  }
+}
+@media (max-width: 380px) {
+  .brand-name {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Reduced motion: no loops, no parallax, no autoplay. Content appears in place.
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .slide-fill {
+    animation: none !important;
+    transform: scaleX(1);
+  }
+  .ring-comet,
+  .cloud-layer img {
+    animation: none !important;
+  }
+  .ring-comet,
+  .statue-sheen {
+    display: none;
+  }
+  /* Neon frames hold still as a faint full outline; the streaks on rules are hidden. */
+  .neon-frame rect {
+    animation: none !important;
+  }
+  .neon-line::after {
+    display: none;
+  }
+  .neon-tail {
+    stroke-dasharray: none;
+  }
+  .neon-trail,
+  .neon-head {
+    display: none;
+  }
+  /* The ambient lights hold still in a fixed arrangement. */
+  .blob-indigo {
+    translate: 8vw 10vh;
+  }
+  .blob-violet {
+    translate: 78vw 70vh;
+  }
+  .blob-orchid {
+    translate: 40vw 100vh;
+  }
+  .aurora {
+    translate: 0 4vh;
+    rotate: -8deg;
+  }
+}

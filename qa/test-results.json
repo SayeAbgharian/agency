@@ -1,0 +1,474 @@
+{
+  "baseURL": "http://127.0.0.1:5173",
+  "date": "2026-11-03T11:38:38.803Z",
+  "checks": [
+    {
+      "description": "dark 320px: no horizontal overflow",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "description": "dark 320px: theme applied before render",
+      "pass": true
+    },
+    {
+      "description": "dark 320px: no console errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "description": "dark 390px: no horizontal overflow",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "description": "dark 390px: theme applied before render",
+      "pass": true
+    },
+    {
+      "description": "dark 390px: zero axe WCAG A/AA violations",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "description": "dark 390px: no console errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "description": "dark 768px: no horizontal overflow",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "description": "dark 768px: theme applied before render",
+      "pass": true
+    },
+    {
+      "description": "dark 768px: no console errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "description": "dark 1024px: no horizontal overflow",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "description": "dark 1024px: theme applied before render",
+      "pass": true
+    },
+    {
+      "description": "dark 1024px: no console errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "description": "dark 1440px: no horizontal overflow",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "description": "dark 1440px: theme applied before render",
+      "pass": true
+    },
+    {
+      "description": "dark 1440px: zero axe WCAG A/AA violations",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "description": "dark 1440px: no console errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "description": "light 320px: no horizontal overflow",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "description": "light 320px: theme applied before render",
+      "pass": true
+    },
+    {
+      "description": "light 320px: no console errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "description": "light 390px: no horizontal overflow",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "description": "light 390px: theme applied before render",
+      "pass": true
+    },
+    {
+      "description": "light 390px: zero axe WCAG A/AA violations",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "description": "light 390px: no console errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "description": "light 768px: no horizontal overflow",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "description": "light 768px: theme applied before render",
+      "pass": true
+    },
+    {
+      "description": "light 768px: no console errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "description": "light 1024px: no horizontal overflow",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "description": "light 1024px: theme applied before render",
+      "pass": true
+    },
+    {
+      "description": "light 1024px: no console errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "description": "light 1440px: no horizontal overflow",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "description": "light 1440px: theme applied before render",
+      "pass": true
+    },
+    {
+      "description": "light 1440px: zero axe WCAG A/AA violations",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "description": "light 1440px: no console errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "description": "Tab: skip link receives focus first",
+      "pass": true
+    },
+    {
+      "description": "nav: every link points to a section that exists",
+      "pass": true,
+      "detail": {
+        "hrefs": [
+          "#home",
+          "#services",
+          "#portfolio",
+          "#about",
+          "#contact"
+        ],
+        "missing": []
+      }
+    },
+    {
+      "description": "nav: blog is labelled 'به‌زودی' and is not a link",
+      "pass": true
+    },
+    {
+      "description": "nav: 'خدمات' scrolls to the services section",
+      "pass": true,
+      "detail": 96.171875
+    },
+    {
+      "description": "nav: active indicator follows the section in view",
+      "pass": true
+    },
+    {
+      "description": "theme toggle: switches to light",
+      "pass": true
+    },
+    {
+      "description": "theme toggle: choice persists after reload",
+      "pass": true
+    },
+    {
+      "description": "theme toggle: switches back to dark",
+      "pass": true
+    },
+    {
+      "description": "hero: slide 02 shows its headline",
+      "pass": true,
+      "detail": "ایده‌ها، در قاب"
+    },
+    {
+      "description": "hero: active slide is marked aria-current",
+      "pass": true
+    },
+    {
+      "description": "hero: pause button reports pressed state",
+      "pass": true
+    },
+    {
+      "description": "hero: pause also freezes the star dust",
+      "pass": true
+    },
+    {
+      "description": "hero: pause also freezes the light sweep on the statue",
+      "pass": true
+    },
+    {
+      "description": "hero: paused slides do not advance (8s)",
+      "pass": true
+    },
+    {
+      "description": "hero: star dust moves again after unpausing",
+      "pass": true
+    },
+    {
+      "description": "hero: autoplay resumes after unpausing",
+      "pass": true
+    },
+    {
+      "description": "header CTA: opens the consultation dialog",
+      "pass": true
+    },
+    {
+      "description": "dialog: Escape closes it",
+      "pass": true
+    },
+    {
+      "description": "form: empty submit shows two text errors",
+      "pass": true
+    },
+    {
+      "description": "form: invalid field gets aria-invalid",
+      "pass": true
+    },
+    {
+      "description": "form: focus moves to the first invalid field",
+      "pass": true
+    },
+    {
+      "description": "form: malformed contact is rejected with a message",
+      "pass": true
+    },
+    {
+      "description": "form: valid submit (Persian digits) shows the honest 'not sent' status",
+      "pass": true
+    },
+    {
+      "description": "form: 'بستن' closes the dialog",
+      "pass": true
+    },
+    {
+      "description": "services: six photo cards",
+      "pass": true
+    },
+    {
+      "description": "services: hover reveals the full description",
+      "pass": true
+    },
+    {
+      "description": "services: card opens its own service page",
+      "pass": true
+    },
+    {
+      "description": "service page: consult button preselects the service in the form",
+      "pass": true
+    },
+    {
+      "description": "dialog: close button closes it",
+      "pass": true
+    },
+    {
+      "description": "service page: 'همه خدمات' returns to the services section",
+      "pass": true,
+      "detail": 96.171875
+    },
+    {
+      "description": "about: 'چطور کار می‌کنیم؟' expands the extra text",
+      "pass": true
+    },
+    {
+      "description": "about: second click collapses it",
+      "pass": true
+    },
+    {
+      "description": "portfolio: exactly one panel is open",
+      "pass": true
+    },
+    {
+      "description": "portfolio: hovering a panel opens it",
+      "pass": true,
+      "detail": {
+        "closedWidth": 128.265625,
+        "openWidth": 538.6875
+      }
+    },
+    {
+      "description": "portfolio: keyboard focus opens a panel",
+      "pass": true
+    },
+    {
+      "description": "portfolio: Enter on the open panel opens its project page",
+      "pass": true
+    },
+    {
+      "description": "project page: 'همه نمونه‌کارها' returns to the portfolio section",
+      "pass": true,
+      "detail": 96.359375
+    },
+    {
+      "description": "clients: logos drift to the right",
+      "pass": true,
+      "detail": {
+        "x1": 39.6072,
+        "x2": 77.814
+      }
+    },
+    {
+      "description": "clients: hovering the strip stops it",
+      "pass": true,
+      "detail": {
+        "h1": 88.3778,
+        "h2": 88.3839
+      }
+    },
+    {
+      "description": "clients: the pause button stops it",
+      "pass": true,
+      "detail": {
+        "p1": 91.4268,
+        "p2": 91.4268
+      }
+    },
+    {
+      "description": "closing CTA: opens the consultation dialog",
+      "pass": true
+    },
+    {
+      "description": "footer: social placeholders are labelled 'به‌زودی', not dead links",
+      "pass": true
+    },
+    {
+      "description": "footer: statue photo credit links to source and licence",
+      "pass": true
+    },
+    {
+      "description": "header: account icon opens the sign-in page",
+      "pass": true
+    },
+    {
+      "description": "desktop click-through: no console errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "description": "mobile: menu opens",
+      "pass": true
+    },
+    {
+      "description": "mobile: Escape closes the menu",
+      "pass": true
+    },
+    {
+      "description": "mobile: focus returns to the menu button",
+      "pass": true
+    },
+    {
+      "description": "mobile: choosing a link closes the menu and scrolls",
+      "pass": true
+    },
+    {
+      "description": "mobile: menu consult button opens the dialog",
+      "pass": true
+    },
+    {
+      "description": "mobile dialog: zero axe WCAG A/AA violations",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "description": "mobile: no console errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "description": "reduced motion: hero slides do not autoplay",
+      "pass": true
+    },
+    {
+      "description": "reduced motion: no pause control (nothing moves)",
+      "pass": true
+    },
+    {
+      "description": "reduced motion: ring comets are hidden",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "description": "reduced motion: no star dust canvas",
+      "pass": true
+    },
+    {
+      "description": "reduced motion: no light following the mouse",
+      "pass": true
+    },
+    {
+      "description": "reduced motion: client logos sit still in one row",
+      "pass": true
+    },
+    {
+      "description": "reduced motion: slides still change on click",
+      "pass": true
+    },
+    {
+      "description": "reduced motion: no console errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "consoleErrors": [],
+  "accessibility": [
+    {
+      "theme": "dark",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "theme": "light",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "state": "dialog",
+      "violations": []
+    }
+  ],
+  "summary": {
+    "total": 94,
+    "failed": 0
+  }
+}

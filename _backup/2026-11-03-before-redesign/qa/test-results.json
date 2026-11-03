@@ -1,0 +1,248 @@
+{
+  "baseURL": "http://127.0.0.1:4173",
+  "checks": [
+    {
+      "description": "Root layout is RTL",
+      "pass": true
+    },
+    {
+      "description": "One semantic H1 and one public homepage",
+      "pass": true
+    },
+    {
+      "description": "Every internal link has a real target",
+      "pass": true
+    },
+    {
+      "description": "Service cards expand on click and expose state",
+      "pass": true
+    },
+    {
+      "description": "Portfolio expands to all five sample categories",
+      "pass": true
+    },
+    {
+      "description": "Project preview opens as a native accessible dialog",
+      "pass": true
+    },
+    {
+      "description": "Escape closes project dialog",
+      "pass": true
+    },
+    {
+      "description": "Header becomes compact after scrolling",
+      "pass": true
+    },
+    {
+      "description": "Consultation dialog autofocuses the first input",
+      "pass": true
+    },
+    {
+      "description": "Native consultation dialog traps keyboard focus",
+      "pass": true
+    },
+    {
+      "description": "Demo form shows confirmation without transmitting data",
+      "pass": true
+    },
+    {
+      "description": "All remote photographs load and have meaningful alternative text",
+      "pass": true
+    },
+    {
+      "description": "No desktop horizontal overflow",
+      "pass": true
+    },
+    {
+      "description": "No mobile horizontal overflow at 390px",
+      "pass": true
+    },
+    {
+      "description": "Mobile navigation opens",
+      "pass": true
+    },
+    {
+      "description": "Mobile navigation follows section anchors",
+      "pass": true
+    },
+    {
+      "description": "Mobile navigation closes after selection",
+      "pass": true
+    },
+    {
+      "description": "Touch users can read service descriptions without hover",
+      "pass": true
+    },
+    {
+      "description": "Counters finish immediately under reduced-motion preferences",
+      "pass": true
+    },
+    {
+      "description": "Mobile portfolio expands to all five sample projects",
+      "pass": true
+    },
+    {
+      "description": "Counters retain final values after leaving and revisiting the section",
+      "pass": true
+    },
+    {
+      "description": "Blog navigation points to a real expandable editorial note on the same page",
+      "pass": true
+    },
+    {
+      "description": "Image failure ends with an accessible CSS fallback, not a broken image",
+      "pass": true
+    },
+    {
+      "description": "No horizontal overflow at 320px",
+      "pass": true
+    },
+    {
+      "description": "No horizontal overflow at 360px",
+      "pass": true
+    },
+    {
+      "description": "No horizontal overflow at 768px",
+      "pass": true
+    },
+    {
+      "description": "No horizontal overflow at 1024px",
+      "pass": true
+    },
+    {
+      "description": "No horizontal overflow at 1920px",
+      "pass": true
+    },
+    {
+      "description": "No browser console errors or uncaught React exceptions",
+      "pass": true
+    },
+    {
+      "description": "Automated WCAG A/AA accessibility checks report zero violations",
+      "pass": true
+    }
+  ],
+  "images": [
+    {
+      "src": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1400&q=82",
+      "loaded": true,
+      "alt": "فرم انتزاعی با نورپردازی بنفش و آبی؛ تصویر موقت از آن‌اسپلش"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=82",
+      "loaded": true,
+      "alt": "عکاسی در ارتفاعات با پس‌زمینه کوهستان و مه"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1100&q=82",
+      "loaded": true,
+      "alt": "همکاری یک تیم خلاق در محیط استودیو"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=82",
+      "loaded": true,
+      "alt": "طراحی و برنامه‌ریزی یک تجربه دیجیتال روی لپ‌تاپ"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=82",
+      "loaded": true,
+      "alt": "تیم بازاریابی در حال بررسی ایده‌ها و داده‌ها"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=82",
+      "loaded": true,
+      "alt": "دفتر یادداشت و ابزار نوشتن برای ایده‌پردازی محتوا"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1000&q=82",
+      "loaded": true,
+      "alt": "نمای نزدیک دوربین حرفه‌ای عکاسی"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1000&q=82",
+      "loaded": true,
+      "alt": "کلاکت سینمایی در صحنه تولید یک فیلم"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1000&q=82",
+      "loaded": true,
+      "alt": "ساختار انتزاعی آبی با خطوط روان و پرتحرک"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=82",
+      "loaded": true,
+      "alt": "فضای معماری مینیمال با ترکیب‌بندی و هویت بصری مشخص"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1000&q=82",
+      "loaded": true,
+      "alt": "گوشی هوشمند برای ارتباط در شبکه‌های اجتماعی"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1300&q=82",
+      "loaded": true,
+      "alt": "فضای داخلی روشن و مینیمال برای پروژه مفهومی نور"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1000&q=82",
+      "loaded": true,
+      "alt": "خیابان شبانه با نورهای نئون در تصویر مفهومی کمپین نبض شهر"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=82",
+      "loaded": true,
+      "alt": "چند فنجان قهوه در دست همراهان، در نور طبیعی"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1000&q=82",
+      "loaded": true,
+      "alt": "جنگل و دریاچه برای کانسپت فیلم در مسیر فردا"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1000&q=82",
+      "loaded": true,
+      "alt": "خیابان شهری و ساختمان‌های بلند برای کمپین محیطی"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=160&q=82",
+      "loaded": true,
+      "alt": "تصویر موقت برای شخصیت فرضی سارا محمدی"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&q=82",
+      "loaded": true,
+      "alt": "تصویر موقت برای شخصیت فرضی علی رضایی"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&q=82",
+      "loaded": true,
+      "alt": "تصویر موقت برای شخصیت فرضی مینا کریمی"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1600&q=82",
+      "loaded": true,
+      "alt": "خیابان شهر در شب با نورهای نئون بنفش و آبی"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1600&q=82",
+      "loaded": true,
+      "alt": "خیابان شهر در شب با نورهای نئون بنفش و آبی"
+    }
+  ],
+  "consoleErrors": [],
+  "accessibility": [
+    {
+      "viewport": "desktop",
+      "violations": []
+    },
+    {
+      "viewport": "mobile-dialog",
+      "violations": []
+    },
+    {
+      "viewport": "mobile",
+      "violations": []
+    }
+  ],
+  "resourceErrors": []
+}
